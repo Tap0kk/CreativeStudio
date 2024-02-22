@@ -1,0 +1,14 @@
+<svg width="32.000000" height="32.000000" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip1_47">
+			<rect id="la:utensil-spoon" width="32.000000" height="32.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="la:utensil-spoon" width="32.000000" height="32.000000" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip1_47)">
+		<path id="Vector" d="M15.4515 14.1061C14.669 13.156 14.275 11.99 14.275 10.8241C14.275 6.50024 19.4561 2.18188 24.6371 2.18188C27.4975 2.18188 29.8182 4.50305 29.8182 7.36401C29.8182 12.546 25.5006 17.7281 21.1723 17.7281C20.0066 17.7281 18.8408 17.3341 17.891 16.5514L5.1326 29.3121C4.45798 29.9869 3.3624 29.9869 2.68779 29.3121C2.01317 28.6375 2.01317 27.5416 2.68779 26.8669L15.4515 14.1061Z" fill="#FD9222" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>
