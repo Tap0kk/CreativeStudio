@@ -1,8 +1,8 @@
 :root {
-  --primary-orange-color: #fd9222;
-  --primary-white-color: #ffffff;
-  --primary-black-color: #111111;
-  --background-color: #1e1823;
+  --primary-orange-color: rgb(253, 146, 34);
+  --primary-white-color: rgb(255, 255, 255);
+  --primary-black-color: rgb(17, 17, 17);
+  --background-color: rgb(30, 24, 35);
   --transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -352,17 +352,15 @@ button {
 
 .ingredients-item {
   padding: 28px 36px 28px 28px;
-  border-radius: 15px;
+  border-radius: 18px;
   background-color: var(--primary-orange-color);
   position: relative;
   overflow: hidden;
 }
 
 .card-cover {
-  width: 270px;
-  height: 270px;
   background-color: var(--primary-white-color);
-  border-radius: 15px;
+  border-radius: 14px;
   padding: 20px;
   position: absolute;
   top: 0;
@@ -372,7 +370,7 @@ button {
   transition: transform var(--transition);
 }
 
-.card-cover .cover-title {
+.cover-title {
   color: var(--primary-black-color);
   font-size: 18px;
   font-weight: 600;
@@ -384,6 +382,9 @@ button {
 
 .ingredients-item:hover .card-cover {
   transform: translate(0);
+}
+.ingredients-item:nth-child(even):hover {
+  border: none;
 }
 
 .cover-list {
@@ -412,7 +413,6 @@ button {
 
 .cover-item {
   padding: 6px 16px;
-  text-overflow: clip;
 }
 
 .cover-desc {
@@ -424,6 +424,7 @@ button {
 .ingredients-item:nth-child(even) {
   background-color: #ffffff;
   border: 1px solid #fd9222;
+  transition: border var(--transition);
 }
 
 .ingredients-item:nth-child(3) {
@@ -710,11 +711,13 @@ button {
   background-color: transparent;
   width: 313px;
   height: 52px;
+  border: 1px solid rgba(253, 146, 34, 0.3);
   transition: background-color var(--transition), color var(--transition);
+  outline: none;
 }
 
 .footer-input::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(253, 146, 34, 0.5);
   font-size: 18px;
   line-height: 1.22;
   letter-spacing: -0.02em;
@@ -726,9 +729,11 @@ button {
 .footer-input:is(:active, :focus, :hover)::placeholder {
   color: var(--primary-black-color);
 }
+
 .footer-input:is(:active, :focus, :hover) {
   background-color: var(--primary-orange-color);
   color: var(--primary-black-color);
+  border-color: rgba(255, 255, 255, 0.474);
 }
 
 .footer-btn {
@@ -749,4 +754,179 @@ button {
 .footer-btn:is(:focus, :hover) {
   background-color: #fcf1e0;
   color: var(--primary-orange-color);
+}
+
+/*-------------------------------------------modal-------------------------------------------*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.392);
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleY(1);
+  transition: transform var(--transition);
+  width: 517px;
+  min-height: 694px;
+  background-color: var(--primary-white-color);
+  border-radius: 5px;
+  padding: 40px;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scaleY(0);
+}
+
+.modal-close-btn {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.modal-close-btn > svg {
+  stroke: var(--primary-black-color);
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  max-width: 298px;
+  margin-bottom: 40px;
+}
+
+.modal-title span {
+  color: var(--primary-orange-color);
+}
+
+.input-wrap {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 22px 24px 22px 62px;
+  border: 1.5px solid rgba(17, 17, 17, 0.05);
+  border-radius: 13px;
+  box-shadow: 0px 5.44px 5.44px 0px rgba(0, 0, 0, 0.03);
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: rgb(64, 64, 64);
+  outline: transparent;
+  transition: border-color var(--transition);
+}
+
+.modal-input:focus {
+  border-color: var(--primary-orange-color);
+}
+
+.modal-input:focus + .modal-icon {
+  stroke: var(--primary-orange-color);
+}
+
+.modal-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 24px;
+  fill: transparent;
+  stroke: var(--primary-black-color);
+  transition: stroke var(--transition);
+}
+
+.modal-input::placeholder,
+.modal-textarea::placeholder {
+  color: rgba(64, 64, 64, 0.3);
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+}
+
+.modal-textarea {
+  width: 100%;
+  height: 137px;
+  padding: 22px 24px 22px 24px;
+  border: 1.5px solid rgba(17, 17, 17, 0.05);
+  border-radius: 13px;
+  box-shadow: 0px 5.44px 5.44px 0px rgba(0, 0, 0, 0.03);
+  margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: rgb(64, 64, 64);
+  outline: transparent;
+  resize: none;
+}
+
+.modal-textarea:focus {
+  border-color: var(--primary-orange-color);
+}
+
+.check-text {
+  line-height: 1.21;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.check-text span {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  border-radius: 6px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+}
+
+.check-text a {
+  color: #fd9222;
+  text-decoration: underline;
+}
+
+.checkbox-policy:checked + .check-text span {
+  background-color: var(--primary-orange-color);
+  border: none;
+  fill: var(--primary-white-color);
+}
+
+.modal-send-btn {
+  padding: 14px 40px;
+  color: var(--primary-white-color);
+  font-weight: 600;
+  line-height: 1.21;
+  border-radius: 100px;
+  background-color: var(--primary-orange-color);
+  border: 1px solid transparent;
+  transition: background-color var(--transition), color var(--transition),
+    border var(--transition);
+}
+
+.modal-send-btn:is(:hover, :focus) {
+  background-color: #ffffff;
+  color: var(--primary-orange-color);
+  border: 1px solid var(--primary-orange-color);
 }

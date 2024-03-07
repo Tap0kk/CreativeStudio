@@ -85,7 +85,7 @@
           </h1>
 
           <div class="hero-buttons">
-            <button class="hero-btn">Buy now</button>
+            <button class="hero-btn" data-modal-open>Buy now</button>
             <a href="#its-made" class="hero-link">How it’s made</a>
             <a href="#benefits" class="hero-scroll"
               >scroll down
@@ -422,5 +422,98 @@
         </div>
       </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-close-btn" type="button" data-modal-close>
+          <svg width="28" height="28">
+            <use href="./images/icon.svg#icon-close-btn"></use>
+          </svg>
+        </button>
+        <p class="modal-title">
+          Leave a review about <span>our chocolate</span>
+        </p>
+
+        <form class="modal-form">
+          <div class="input-field">
+            <div class="input-wrap">
+              <input
+                class="modal-input"
+                type="name"
+                name="user-name"
+                placeholder="Name"
+                required
+              />
+              <svg class="modal-icon" width="24" height="24">
+                <use href="./images/icon.svg#icon-user"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="input-field">
+            <div class="input-wrap">
+              <input
+                class="modal-input"
+                type="email"
+                name="user-email"
+                placeholder="Email"
+              />
+              <svg class="modal-icon" width="24" height="24">
+                <use href="./images/icon.svg#icon-mail"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="input-field">
+            <div class="input-wrap">
+              <input
+                class="modal-input"
+                type="tel"
+                name="user-phone"
+                placeholder="Phone number"
+                required
+              />
+              <svg class="modal-icon" width="24" height="24">
+                <use href="./images/icon.svg#icon-phone"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="input-field">
+            <textarea
+              class="modal-textarea"
+              placeholder="Enter text"
+              name="modal-textarea"
+            ></textarea>
+          </div>
+
+          <div class="input-field">
+            <input
+              class="checkbox-policy visually-hidden"
+              type="checkbox"
+              name="check-policy"
+              id="check-policy"
+              value="true"
+              required
+            />
+            <label for="check-policy" class="check-text"
+              ><span
+                ><svg class="check-icon" width="10" height="10">
+                  <use href="./images/icon.svg#icon-check"></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of the&nbsp
+              <a target="_blank" rel="no-referrer noopener" href=""
+                >Privacy Policy</a
+              ></label
+            >
+          </div>
+
+          <button class="modal-send-btn" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./modal.js"></script>
   </body>
 </html>
